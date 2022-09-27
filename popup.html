@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+		<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+
+		<style>
+
+			:root {
+				--background-color-primary: #ffffff;
+				--background-color-secondary: #f7f7f7;
+				--border-color-primary: #e6e6e6;
+				--color-primary: #585858;
+				--color-secondary: #000000;
+				--font-size-big: 17px;
+			}
+
+			body {
+				color: var(--color-primary);
+				font-family: 'Open Sans', sans-serif;
+				font-weight: 300;
+				margin:0;
+				max-width:348px;
+				max-height:275px;
+				width:348px;
+				height:94px;
+				overflow:hidden;
+				font-size:75%;
+			}
+
+			header {
+				border: 0px;
+				height: 38px;
+				line-height: 15px;
+				margin: 0 0 0 0;
+				padding: 16px;
+			}
+
+			header h1 {
+				color: var(--color-secondary);
+				display: inline;
+				font-family: 'Source Sans Pro', sans-serif;
+				font-size: var(--font-size-big);
+				line-height: 20px;
+			}
+
+			p {
+				margin:0;
+			}
+			#addonStateImage {
+				width:200px;
+				height:200px;
+				margin:auto;
+				margin-bottom:10px;
+				cursor:pointer;
+				background-size:contain;
+				background-position:center;
+				background-image:url("powerbutton_off.png");
+			}
+			#addonStateSearch {
+				margin:auto;
+			}
+
+			.toggle {
+			  -webkit-appearance: none;
+			  -moz-appearance: none;
+			  appearance: none;
+				float: right;
+			  width: 62px;
+			  height: 32px;
+			  display: inline;
+			  position: relative;
+			  border-radius: 50px;
+			  overflow: hidden;
+			  outline: none;
+			  border: none;
+			  cursor: pointer;
+			  background-color: #F23AA9;
+			  transition: background-color ease 0.3s;
+			}
+
+			.toggle:before {
+			  content: "on off";
+			  display: block;
+			  position: absolute;
+			  z-index: 2;
+			  width: 28px;
+			  height: 28px;
+			  background: #fff;
+			  right: 2px;
+			  top: 2px;
+			  border-radius: 50%;
+			  font: 10px/28px Helvetica;
+			  text-transform: uppercase;
+			  font-weight: bold;
+			  text-indent: -22px;
+			  word-spacing: 37px;
+			  color: #fff;
+			  text-shadow: -1px -1px rgba(0,0,0,0.15);
+			  white-space: nowrap;
+			  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+			  transition: all cubic-bezier(0.3, 1.5, 0.7, 1) 0.3s;
+			}
+
+			.toggle:checked {
+			  background-color: #707070;
+			}
+
+			.toggle:checked:before {
+			  right: 32px;
+			}
+
+			a:hover {
+			        text-decoration-line: underline;
+			        color: #d10e7b;
+			}
+
+			a {
+			        color: var(--color-primary);
+			        text-decoration: none;
+			        font-weight: bold;
+			}
+
+			ul.list-horizontal {
+			        padding-inline-start: 0px;
+			        margin-block-start: 0em;
+			}
+
+			.list-horizontal li {
+				display:inline-block;
+			}
+			.list-horizontal li:before {
+				content: '\00a0\2022\00a0\00a0';
+				color:#999;
+				color:rgba(0,0,0,0.5);
+				font-size:11px;
+			}
+			.list-horizontal li:first-child:before {
+				content: '';
+			}
+		</style>
+	<body>
+		<header>
+			<div id="addonStateSearch">
+				<h1>JoJo Wiki Redirector 2.0</h1>
+				<input class="toggle" id="enableExtension" type="checkbox" />
+				<div><input type="checkbox" name="hideWikia" id="hideWikiaCheck"> Hide Fandom in search results</div>
+				<hr />
+				<div>
+					<ul class="list-horizontal">Support Us:
+						<li><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5M284PGDK8MJG&source=url" target="_blank">PayPal</a></li>
+						<li><a href="https://www.patreon.com/JoJoWiki" target="_blank">Patreon</a></li>
+						<li><a href="https://ko-fi.com/jojowiki" target="_blank">Ko-Fi</a></li>
+					</ul>
+				</div>
+		</header>
+		<script type="text/javascript" src="popup.js"></script>
+	</body>
+</html>
