@@ -2,7 +2,7 @@
 (function(){
   'use strict';
   let isPluginDisabled = false; // Variable storing whether or not the plugin is disabled.
-  let storage = chrome.storage; // Make sure we have a storage API.
+  let storage = (typeof chrome.storage === "undefined") ? browser.storage : chrome.storage; // Check to see if using Chrome or Firefox
 
   const WIKIA_REGEX = /^jojo\.(wikia|fandom)\.com$/i; // Used to match the domain of the old wikia/fandom to make sure we are redirecting the correct domain.
 
@@ -34,14 +34,14 @@
     chrome.action.setIcon({ path: isPluginDisabled?"icon32_black.png":"icon32.png"  });
   }
 
-  chrome.storage.local.get(['isDisabled'],(result)=>{
+  storage.local.get(['isDisabled'],(result)=>{
       // Get the initial condition of whether or not the extension is disabled
       isPluginDisabled= result ? result.isDisabled : false;
       updateIcon(); // Update icon to match new state
   });
 
   // Anytime the state of the plugin changes, update the internal state of the background script.
-  chrome.storage.onChanged.addListener(
+  storage.onChanged.addListener(
       function(changes, areaName) {
         // If isDisabled changed, update isPluginDisabled
         if(changes["isDisabled"]!==undefined && changes["isDisabled"].newValue!=changes["isDisabled"].oldValue) {
