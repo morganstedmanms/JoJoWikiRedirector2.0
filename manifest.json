@@ -2,7 +2,7 @@
   "update_url": "https://clients2.google.com/service/update2/crx",
   "name": "JoJo Wiki Redirector",
   "author": "proEndreeper, Modified by morganstedmanms to work for JoJo Wiki",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Redirects JoJo Wikia/Fandom requests to jojowiki.com",
   "host_permissions": [
                   "*://jojo.wikia.com/*",
